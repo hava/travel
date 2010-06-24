@@ -1,6 +1,6 @@
 Travel::Application.routes.draw do |map|
-  map.resources :trips
-  
+  resources :holidays
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

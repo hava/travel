@@ -9,15 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100624172227) do
+ActiveRecord::Schema.define(:version => 20100624210535) do
 
-  create_table "trips", :force => true do |t|
+  create_table "holidays", :force => true do |t|
     t.string   "name"
-    t.date     "from_date"
-    t.date     "to_date"
+    t.datetime "from_date"
+    t.datetime "to_date"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
