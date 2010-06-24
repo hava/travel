@@ -11,6 +11,9 @@ gem "rspec-rails", ">= 2.0.0.beta.8"
 
 gem "factory_girl"
 
+gem "faker"
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

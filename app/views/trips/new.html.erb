@@ -1,0 +1,12 @@
+<h2>Create a Trip</h2>
+
+<% form_for(@trip) do |f| %>
+    <%= f.error_messages %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create Trip" %>
+    </div>
+<% end %>
