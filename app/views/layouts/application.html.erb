@@ -7,8 +7,24 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+<div id="banner">
+  <h1>Holiday Planner</h1>
+</div>
+<div id="header">
+  <h2><%= @header %></h2>
+</div>
+<div id="content" class="panels">
+  <%= yield %>
+</div>
+<div id="sidepanel" class="panels">
+  <ul>
+    <% @sidepanel.each do |panel| %>
+        <li>
+          <%= link_to panel[:title], panel[:link] %>
+        </li>
+    <% end %>
+  </ul>
+</div>
 
 </body>
 </html>

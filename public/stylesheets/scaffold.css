@@ -1,56 +1,144 @@
-body { background-color: #fff; color: #333; }
+body {
+    background-color: #fff;
+    color: #333;
+}
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+#content {
+    background-color: #FFFFFF;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 16px 16px;
+    overflow: hidden;
+    padding-right: 20px; /*margin-right: 244px;*/
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    left: 0;
+    width: 65%;
+    position: relative;
+    float: left;
+    padding-left: 40px;
+
+}
+
+#header {
+    background-color: #FFFFFF;
+    border-color: #DDDDDD #DDDDDD #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0 16px 0; /*padding-right: 5px;*/
+    margin-top: 17px;
+    padding-left: 20px;
+    padding-right: 40px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-topleft: 8px;
+    position: relative;
+    width: 65%
+}
+
+#banner {
+    color: #666666;
+    background-color: #A6C7FF;
+    padding-left: 17px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a {
+    color: #000;
+}
+
+a:visited {
+    color: #666;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #000;
+}
 
 div.field, div.actions {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #notice {
-  color: green;
+    color: green;
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+    padding: 2px;
+    background-color: red;
+    display: table;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
 }
 
 #error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
 }
 
 #error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
+    font-size: 12px;
+    list-style: square;
+}
+
+ul {
+    list-style-type: none;
+    padding-left:0;
+}
+
+li.holidayitem {
+    padding-bottom: 15px;
+}
+
+.actionlinks {
+    float: right;
+}
+
+a:visited #sidepanel {
+    color: black;
+}
+#sidepanel {
+    color: black;
+    background-color: #A6FF57;
+    float: left;
+    display: inline;
+    width: 15%;
+    padding-left: 20px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-topleft: 8px;
+
+}
+
+form {
+    padding-top:10px;    
 }

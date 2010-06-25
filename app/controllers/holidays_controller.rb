@@ -1,44 +1,38 @@
 class HolidaysController < ApplicationController
-  # GET /holidays
-  # GET /holidays.xml
   def index
+    @header = "Holidays"
     @holidays = Holiday.all
+    @sidepanel = [{:link=> new_holiday_path, :title=>"Create a Holiday"}]
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @holidays }
     end
   end
 
-  # GET /holidays/1
-  # GET /holidays/1.xml
   def show
     @holiday = Holiday.find(params[:id])
+    @header = @holiday.name
+    @sidepanel = [edit_menu(params[:id]),{:link=> new_holiday_path, :title=>"Create a Holiday"}, {:link=> holidays_path, :title=>"Show all Holidays"}]
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @holiday }
     end
   end
 
-  # GET /holidays/new
-  # GET /holidays/new.xml
   def new
+    new_holiday_setup()
     @holiday = Holiday.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @holiday }
     end
   end
 
-  # GET /holidays/1/edit
   def edit
     @holiday = Holiday.find(params[:id])
+    edit_holiday_setup(@holiday.name)
   end
 
-  # POST /holidays
-  # POST /holidays.xml
   def create
     @user = User.find(1)
     @holiday = @user.holidays.new(params[:holiday])
@@ -46,39 +40,48 @@ class HolidaysController < ApplicationController
     respond_to do |format|
       if @holiday.save
         format.html { redirect_to(@holiday, :notice => 'Holiday was successfully created.') }
-        format.xml  { render :xml => @holiday, :status => :created, :location => @holiday }
       else
+        new_holiday_setup()
         format.html { render :action => "new" }
-        format.xml  { render :xml => @holiday.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /holidays/1
-  # PUT /holidays/1.xml
   def update
     @holiday = Holiday.find(params[:id])
+    name = @holiday.name
 
     respond_to do |format|
       if @holiday.update_attributes(params[:holiday])
         format.html { redirect_to(@holiday, :notice => 'Holiday was successfully updated.') }
-        format.xml  { head :ok }
       else
+        edit_holiday_setup(name)
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @holiday.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /holidays/1
-  # DELETE /holidays/1.xml
   def destroy
     @holiday = Holiday.find(params[:id])
     @holiday.destroy
 
     respond_to do |format|
       format.html { redirect_to(holidays_url) }
-      format.xml  { head :ok }
     end
+  end
+
+  private
+  def edit_menu(id)
+     return {:link=> edit_holiday_path(id), :title=>"Edit this Holiday"}
+  end
+
+  def new_holiday_setup
+    @header = "Create a Holiday"
+    @sidepanel = [{:link=> holidays_path, :title=>"Show all Holidays"}]
+  end
+
+  def edit_holiday_setup(name)
+    @header = name
+    @sidepanel = [{:link=> new_holiday_path, :title=>"Create a Holiday"}, {:link=> holidays_path, :title=>"Show all Holidays"}]
   end
 end

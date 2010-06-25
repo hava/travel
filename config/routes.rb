@@ -1,4 +1,7 @@
 Travel::Application.routes.draw do |map|
+
+  resources :people, :controller => "Example::People"
+
   resources :holidays
 
   # The priority is based upon order of creation:

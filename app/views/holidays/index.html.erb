@@ -1,27 +1,15 @@
-<h1>Listing holidays</h1>
+<ul>
+  <% @holidays.each do |holiday| %>
+      <li class="holidayitem">
+        <%= link_to holiday.name, holiday %>
+        <div>
+          <span class="details"><%= holiday.from_date %> to <%= holiday.to_date %></span>
+        <span class="actionlinks">
+          <span><%= link_to 'Edit', edit_holiday_path(holiday) %></span>
+          <span><%= link_to 'Destroy', holiday, :confirm => 'Are you sure?', :method => :delete %></span>
+        </span>
+        </div>
+      </li>
+  <% end %>
+</ul>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>From date</th>
-    <th>To date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @holidays.each do |holiday| %>
-  <tr>
-    <td><%= holiday.name %></td>
-    <td><%= holiday.from_date %></td>
-    <td><%= holiday.to_date %></td>
-    <td><%= link_to 'Show', holiday %></td>
-    <td><%= link_to 'Edit', edit_holiday_path(holiday) %></td>
-    <td><%= link_to 'Destroy', holiday, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Holiday', new_holiday_path %>
