@@ -12,7 +12,7 @@ describe User do
   end
 
   it "should require a name" do
-    user = User.new()
+    user = User.new() 
     user.should_not be_valid
   end
 

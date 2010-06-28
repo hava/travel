@@ -27,6 +27,7 @@ class HolidaysController < ApplicationController
     @holiday = Holiday.find(params[:id])
   end
 
+
   def create
     @user = User.find(1)
     @holiday = @user.holidays.new(params[:holiday])

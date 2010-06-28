@@ -111,7 +111,7 @@ div.field, div.actions {
 
 ul {
     list-style-type: none;
-    padding-left:0;
+    padding-left: 0;
 }
 
 li.holidayitem {
@@ -125,6 +125,7 @@ li.holidayitem {
 a:visited #sidepanel {
     color: black;
 }
+
 #sidepanel {
     color: black;
     background-color: #A6FF57;
@@ -140,5 +141,10 @@ a:visited #sidepanel {
 }
 
 form {
-    padding-top:10px;    
+    padding-top: 10px;
+}
+
+.hiddeninline {
+    visibility: hidden;
+    display: none;
 }

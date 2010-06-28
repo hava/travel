@@ -2,7 +2,17 @@
 
 <p>
   <b>Name:</b>
-  <%= @holiday.name %>
+  <span class="inlineeditform">
+    <span><%= @holiday.name %></span>
+    <%= link_to 'Edit', {}, :class => "inlineedit" %>
+    <span class="hiddeninline">
+    <%= form_for(@holiday) do |f| %>
+      <%= f.text_field :name, :class => "field" %>
+          <%= f.submit "Save", :field => "name" %>
+    <% end %>
+  </span>
+  </span>
+
 </p>
 
 <p>
@@ -14,5 +24,4 @@
   <b>To date:</b>
   <%= @holiday.to_date %>
 </p>
-
 
