@@ -148,3 +148,7 @@ form {
     visibility: hidden;
     display: none;
 }
+
+.form-item {
+  display:inline;
+}

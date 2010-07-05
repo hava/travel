@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <span class="inlineeditform">
+<div >
+  <label class="form-item">Name:</label>
+  <div class="form-item inlineeditform">
     <span><%= @holiday.name %></span>
     <%= link_to 'Edit', {}, :class => "inlineedit" %>
     <span class="hiddeninline">
-    <%= form_for(@holiday) do |f| %>
-      <%= f.text_field :name, :class => "field" %>
+      <%= form_for(@holiday, :html => { :method => :put, :class => "form-item"}) do |f| %>
+          <%= f.text_field :name, :class => "field" %>
           <%= f.submit "Save", :field => "name" %>
-    <% end %>
-  </span>
-  </span>
+      <% end %>
+    </span>
+  </div>  
+</div>
 
-</p>
 
 <p>
   <b>From date:</b>

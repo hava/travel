@@ -10,12 +10,9 @@ jQuery.ajaxSetup({
 jQuery.fn.inlineedit = function() {
     var element = this;
     this.click(function() {
-        var parent = element.parent();
-        for (var i = 0; i < parent.children().length; i++) {
-            parent.children().each(function() {
-                $(this).toggleClass("hiddeninline")
-            });
-        }
+        element.parent().children().each(function() {
+            $(this).toggleClass("hiddeninline")
+        });
         return false;
     });
     return this;
