@@ -3,7 +3,7 @@
 <head>
   <title>Travel</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery', 'application', 'rails'  %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'jquery-ui-1.8.2.custom.min', 'application', 'rails'%>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -11,20 +11,35 @@
 <div id="banner">
   <h1>Holiday Planner</h1>
 </div>
-<div id="header">
-  <h2><%= props[:heading] %></h2>
+
+<div id="actions" class="panel">
+  <ul>
+    <li class="action">
+      <%= link_to "New Holiday", new_holiday_path %>
+    </li>
+    <li class="action">
+      <%= link_to "Find a Holiday", holidays_path %>
+    </li>
+  </ul>
+
 </div>
-<div id="content" class="panels">
+<!--<div id="sidepanel" class="panels">-->
+<!--<ul>-->
+<!--
+<% props[:sidepanel].each do |panel| %>-->
+    <!--<li>-->
+    <!--<%= link_to panel[:title], panel[:link] %>-->
+    <!--</li>-->
+    <!--
+<% end %>-->
+<!--</ul>-->
+<!--</div>-->
+<div id="content" class="panel">
+  <div id="header">
+    <h2><%= props[:heading] %></h2>
+  </div>
   <%= yield %>
 </div>
-<div id="sidepanel" class="panels">
-  <ul>
-    <% props[:sidepanel].each do |panel| %>
-        <li>
-          <%= link_to panel[:title], panel[:link] %>
-        </li>
-    <% end %>
-  </ul>
-</div>
+
 </body>
 </html>

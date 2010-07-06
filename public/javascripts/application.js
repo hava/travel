@@ -18,6 +18,9 @@ jQuery.fn.inlineedit = function() {
     return this;
 };
 
+
 $(document).ready(function() {
     $('.inlineedit').inlineedit();
+    $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
 });
+

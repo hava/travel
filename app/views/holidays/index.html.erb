@@ -6,7 +6,7 @@
           <span class="details"><%= holiday.from_date %> to <%= holiday.to_date %></span>
         <span class="actionlinks">
           <span><%= link_to 'Edit', edit_holiday_path(holiday) %></span>
-          <span><%= link_to 'Destroy', holiday, :confirm => 'Are you sure?', :method => :delete %></span>
+          <span><%= link_to "Delete", holiday, :confirm => 'Are you sure?', :method => :delete%></span>
         </span>
         </div>
       </li>

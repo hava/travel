@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :from_date %><br />
-    <%= f.date_select :from_date %>
+    <%= f.text_field :from_date, :class => "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :to_date %><br />
-    <%= f.date_select :to_date %>
+    <%= f.text_field :to_date, :class => "datepicker" %>
   </div>
   <div class="actions">
     <%= f.submit %>
